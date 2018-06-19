@@ -57,12 +57,12 @@ namespace AppContacts.Data
             {
                 sorted = from c in contacts
                          orderby c.Nombre
-                         group c by c.Nombre[0].Tostring()
+                         group c by c.Nombre[0].ToString()
                         into theGroup
                          select new Grouping<String, Contact>
                          (theGroup.Key, theGroup);
             }
-            return ObservableCollection<Grouping<string, Contact>>(sorted);
+            return ReadOnlyObservableCollection<Grouping<string, Contact>>(sorted);
         }
     }
 }
