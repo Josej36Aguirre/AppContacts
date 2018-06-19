@@ -10,7 +10,9 @@ namespace AppContacts.Data
     using Model;
     using System.Threading.Tasks;
     using System.Collections.ObjectModel;
-   public class ContactsDatabase
+    using AppContacts.Helper;
+
+    public class ContactsDatabase
     {
         private readonly SQLiteAsyncConnection dataBase;
 

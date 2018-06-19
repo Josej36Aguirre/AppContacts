@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AppContacts.Services
 {
-    interface IFileHelper
+    public interface IFileHelper
     {
         string GetLocalFilePath(string fileName);
 
