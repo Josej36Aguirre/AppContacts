@@ -8,6 +8,5 @@ namespace AppContacts.Services
     {
         string GetLocalFilePath(string fileName);
 
-
     }
 }

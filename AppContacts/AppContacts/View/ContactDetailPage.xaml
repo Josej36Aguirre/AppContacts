@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppContacts.View.ContactDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Nombre">
+                </Label>
+                <Entry Placeholder="ingrese nombre" 
+                       HorizontalOptions="FillAndExpand"
+                       Text="{Binding CurrenContacto.Nombre}"
+                       >
+                </Entry>
+            </StackLayout >
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Telefono">
+                </Label>
+                <Entry Placeholder="ingrese telefono" 
+                       HorizontalOptions="FillAndExpand"
+                       Text="{Binding CurrenContact.Telefono}"
+                       >
+                </Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Direccion">
+                </Label>
+                <Entry Placeholder="ingrese direccion" 
+                       HorizontalOptions="FillAndExpand"
+                       Text="{Binding CurrenContact.Direccion}"
+                       >
+                </Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Notas">
+                </Label>
+                <Editor 
+                       HorizontalOptions="FillAndExpand"
+                        HeightRequest="200"
+                    Text="{Binding CurrenContact.Notas}"
+                        >
+                </Editor>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Guardar"
+                        Command="{Binding SaveContactCommand}"
+                        ></Button>
+                <Button Text="Eliminar"
+                        Command="{Binding DeleteContactCommand}"
+                        ></Button>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
