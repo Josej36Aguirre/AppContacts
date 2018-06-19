@@ -5,7 +5,7 @@ using System.Text;
 namespace AppContacts.Model
 {
     using SQLite;
-    class Contact
+   public class Contact
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

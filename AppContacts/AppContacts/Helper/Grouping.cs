@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AppContacts.Helper
 {
-    class Grouping<K, T> : ObservableCollection<T>
+   public class Grouping<K, T> : ObservableCollection<T>
     {
         public K Key { get; set; }
         public Grouping(K key, IEnumerable<T> items)
