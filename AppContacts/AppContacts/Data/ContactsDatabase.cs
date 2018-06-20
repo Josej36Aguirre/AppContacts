@@ -62,7 +62,7 @@ namespace AppContacts.Data
                          select new Grouping<String, Contact>
                          (theGroup.Key, theGroup);
             }
-            return new ObservableCollection<Grouping<string, Contact>>(sorted);
+            return  ObservableCollection<Grouping<string, Contact>>(sorted);
         }
     }
 }
