@@ -11,7 +11,9 @@ using Android.Views;
 using Android.Widget;
 using AppContacts.Services;
 using Xamarin.Forms;
+using AppContacts.Droid.Services;
 
+[assembly: Dependency(typeof(FileHelper))]
 namespace AppContacts.Droid.Services
 {
     class FileHelper : IFileHelper
@@ -19,7 +21,7 @@ namespace AppContacts.Droid.Services
         public string GetLocalFilePath(string fileName)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            return path.Combine(path, fileName);
+            return Path.Combine(path, fileName);
         }
     }
 }

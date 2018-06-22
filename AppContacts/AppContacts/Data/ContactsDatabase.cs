@@ -24,8 +24,8 @@ namespace AppContacts.Data
 
         public async Task<List<Contact>> GetItemAsync()
         {
-            var data = await dataBase.Table<Contact>().ToListAsync();
-            return data;
+            return await dataBase.Table<Contact>().ToListAsync();
+           
         }
         public Task<Contact> GetItemAsync(int id)
         {
@@ -42,13 +42,14 @@ namespace AppContacts.Data
             }
             else
             {
-                return dataBase.DeleteAsync(item);
+                return dataBase.InsertAsync(item);
             }
         }
-        public Task<int> DeleteItemAsync(ContactsDatabase item)
+        public Task<int> DeleteItemAsync(Contact item)
         {
             return dataBase.DeleteAsync(item);
         }
+
         public async Task<ObservableCollection<IGrouping<string, Contact>>> GetAllGrouped()
         {
             IList<Contact> contacts = await App.DataBase.GetItemAsync();
