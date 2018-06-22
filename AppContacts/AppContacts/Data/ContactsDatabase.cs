@@ -7,7 +7,7 @@ namespace AppContacts.Data
     using System.Text;
     using SQLite;
     using System.Linq;
-    using Model;
+    using AppContacts.Model;
     using System.Threading.Tasks;
     using System.Collections.ObjectModel;
     using AppContacts.Helper;
@@ -62,7 +62,7 @@ namespace AppContacts.Data
                          select new Grouping<String, Contact>
                          (theGroup.Key, theGroup);
             }
-            return  ObservableCollection<Grouping<string, Contact>>(sorted);
+            return new  ObservableCollection<Grouping<string, Contact>>(sorted);
         }
     }
 }
