@@ -7,7 +7,6 @@ using System.Text;
 using AppContacts.Services;
 using Foundation;
 using UIKit;
-using AppContacts.Services;
 using Xamarin.Forms;
 using AppContacts.iOS.Services;
 
