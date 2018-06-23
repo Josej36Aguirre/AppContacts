@@ -10,16 +10,20 @@ using AppContacts.ViewModel;
 namespace AppContacts.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ContactDetailPage : ContentPage
+	public partial class ContactDetailPageViewModel : ContentPage
 	{
         public ContactDetailPageViewModel ViewModel { get; set; }
 
-        public ContactDetailPage ()
+        public ContactDetailPageViewModel (Model.Contact currenContact)
 		{
 			InitializeComponent ();
             ViewModel = new ContactDetailPageViewModel(Navigation);
             this.BindingContext = ViewModel;
 
+        }
+
+        public ContactDetailPageViewModel()
+        {
         }
     }
 }
