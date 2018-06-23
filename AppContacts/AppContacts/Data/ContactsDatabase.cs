@@ -50,7 +50,7 @@ namespace AppContacts.Data
             return dataBase.DeleteAsync(item);
         }
 
-        public async Task<ObservableCollection<IGrouping<string, Contact>>> GetAllGrouped()
+        public async Task<ObservableCollection<Grouping<string, Contact>>> GetAllGrouped()
         {
             IList<Contact> contacts = await App.DataBase.GetItemAsync();
             IEnumerable<Grouping<string, Contact>> sorted = new Grouping<string, Contact>[0];

@@ -9,7 +9,7 @@
                 </Label>
                 <Entry Placeholder="ingrese nombre" 
                        HorizontalOptions="FillAndExpand"
-                       Text="{Binding CurrenContacto.Nombre}"
+                       Text="{Binding CurrenContact.Nombre}"
                        >
                 </Entry>
             </StackLayout >
@@ -25,7 +25,7 @@
             <StackLayout Orientation="Horizontal">
                 <Label Text="Direccion">
                 </Label>
-                <Entry Placeholder="ingrese direccion" 
+                <Entry Placeholder="ingrese dirección" 
                        HorizontalOptions="FillAndExpand"
                        Text="{Binding CurrenContact.Direccion}"
                        >
