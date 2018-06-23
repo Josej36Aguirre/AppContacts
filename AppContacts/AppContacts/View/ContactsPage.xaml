@@ -8,8 +8,46 @@
             Text="Agregar"
             Order="Primary"
             Command="{Binding AddContactCommand}"
-            />
-
-    </ContentPage.ToolbarItems>
+            /></ContentPage.ToolbarItems>
+    <ListView
+        ItemsSource="{Binding ConctatsList}"
+        IsGroupingEnabled="True"
+        GroupShortNameBinding="{Binding Key}"
+        SelectedItem="{Binding CurrentContact}"
+        local:ItemTappedAttached.Command ="{Binding ItemTappedCommand}">
+        <ListView.GroupHeaderTemplate>
+            <DataTemplate>
+                <ViewCell Height="30">
+                    <StackLayout 
+                        VerticalOptions="EndAndExpand"
+                        Padding="5"
+                        BackgroundColor="Blue">
+                        <Label 
+                            Text="{Binding Key}"
+                            TextColor="White"
+                            VerticalOptions="Center"
+                            HeightRequest="25"></Label>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.GroupHeaderTemplate>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label 
+                            Text="{Binding Nombre}"/>
+                        <Label 
+                            Grid.Column="1"
+                            Text="{Binding Telefono}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 
 </ContentPage>

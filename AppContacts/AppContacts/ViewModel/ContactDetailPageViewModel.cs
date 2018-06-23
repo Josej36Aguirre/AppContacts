@@ -9,7 +9,7 @@ namespace AppContacts.ViewModel
 {
    public class ContactDetailPageViewModel
     {
-        public Contact CurrenContact { get; set; }
+       
         public Command SaveContactCommand { get; set; }
         public Command DeleteContactCommand { get; set; }
         public INavigation Navigation { get; set; }

@@ -7,14 +7,18 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using AppContacts.ViewModel;
+using AppContacts.Model;
+
 namespace AppContacts.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ContactDetailPageViewModel : ContentPage
 	{
+        private INavigation navigation;
+
         public ContactDetailPageViewModel ViewModel { get; set; }
 
-        public ContactDetailPageViewModel (Model.Contact currenContact)
+        public ContactDetailPageViewModel (Contact currenContact)
 		{
 			InitializeComponent ();
             ViewModel = new ContactDetailPageViewModel(Navigation);
@@ -22,8 +26,9 @@ namespace AppContacts.View
 
         }
 
-        public ContactDetailPageViewModel()
+        public ContactDetailPageViewModel(INavigation navigation)
         {
+            this.navigation = navigation;
         }
     }
 }

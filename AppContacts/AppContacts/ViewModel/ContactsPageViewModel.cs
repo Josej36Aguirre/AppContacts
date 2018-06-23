@@ -35,11 +35,11 @@ namespace AppContacts.ViewModel
         {
             if (contact == null)
             {
-                await Navigation.PushAsync(new View.ContactDetailPageViewModel());
+                await Navigation.PushAsync(new View.ContactDetailPage());
             }
             else
             {
-                await Navigation.PushAsync(new View.ContactDetailPageViewModel(CurrenContact));
+                await Navigation.PushAsync(new ContactDetailPage(CurrenContact));
             }
         }
 
