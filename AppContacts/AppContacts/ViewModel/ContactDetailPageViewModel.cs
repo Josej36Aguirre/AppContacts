@@ -13,11 +13,20 @@ namespace AppContacts.ViewModel
         public Command SaveContactCommand { get; set; }
         public Command DeleteContactCommand { get; set; }
         public INavigation Navigation { get; set; }
+        public Contact CurrentContact { get; set; }
 
-        public ContactDetailPageViewModel(INavigation navigation)
+        public ContactDetailPageViewModel(INavigation navigation, Contact contact=null)
         {
             this.Navigation = navigation;
-            CurrenContact = new Contact();
+            if (contact == null)
+            {
+                CurrentContact = new Contact();
+            }
+            else
+            {
+                CurrentContact = contact;
+            }
+          
             SaveContactCommand = new Command(async () => await SaveContact());
             DeleteContactCommand = new Command(async () => await DeleteContact());
 
@@ -25,13 +34,13 @@ namespace AppContacts.ViewModel
 
         private async Task SaveContact()
         {
-            await App.DataBase.SaveItemAsync(CurrenContact);
+            await App.DataBase.SaveItemAsync(CurrentContact);
             await Navigation.PopToRootAsync();
         }
 
         private async Task DeleteContact()
         {
-            await App.DataBase.DeleteItemAsync(CurrenContact);
+            await App.DataBase.DeleteItemAsync(CurrentContact);
             await Navigation.PopToRootAsync();
         }
  

@@ -17,18 +17,23 @@ namespace AppContacts.View
         private INavigation navigation;
 
         public ContactDetailPageViewModel ViewModel { get; set; }
+       
 
-        public ContactDetailPageViewModel (Contact currenContact)
+        public ContactDetailPageViewModel (INavigation navigation, Contact contact = null)
 		{
 			InitializeComponent ();
-            ViewModel = new ContactDetailPageViewModel(Navigation);
+            if (contact == null)
+            {
+                ViewModel = new ContactDetailPageViewModel(Navigation);
+            }
+            else
+            {
+                ViewModel = new ContactDetailPageViewModel(Navigation, contact );
+            }
+           
             this.BindingContext = ViewModel;
 
         }
 
-        public ContactDetailPageViewModel(INavigation navigation)
-        {
-            this.navigation = navigation;
-        }
     }
 }

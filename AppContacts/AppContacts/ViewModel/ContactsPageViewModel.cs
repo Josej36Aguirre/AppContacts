@@ -39,7 +39,7 @@ namespace AppContacts.ViewModel
             }
             else
             {
-                await Navigation.PushAsync(new ContactDetailPage(CurrenContact));
+                await Navigation.PushAsync(new ContactDetailPage(contact));
             }
         }
 
